@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nandini Karn — Computer Vision &amp; Robotics Engineer</title>
+<meta name="description" content="Portfolio of Nandini Karn, Electronics &amp; Communication Engineering student specializing in computer vision, robotics, and embedded systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#top"><span class="bracket">[</span>NK<span class="bracket">]</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Get in touch</a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="navMobile">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow"><span class="dot"></span> SYSTEM_STATUS: ONLINE</p>
+      <h1 class="hero-title">
+        Nandini Karn
+      </h1>
+      <p class="hero-role">Computer Vision &amp; Robotics Engineer</p>
+      <p class="hero-desc">
+        Electronics &amp; Communication Engineering student building real-time vision pipelines
+        and gesture-controlled robotic systems — where a webcam frame becomes a motor command
+        in milliseconds.
+      </p>
+      <div class="hero-tags">
+        <span>Python</span><span>OpenCV</span><span>MediaPipe</span><span>YOLO</span><span>ESP32</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Download CV</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="viewport" id="viewport">
+        <div class="viewport-bar">
+          <span class="viewport-dot rec"></span>
+          <span class="viewport-label">LIVE_FEED // hand_tracking.py</span>
+        </div>
+        <div class="viewport-frame">
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+
+          <svg class="hand-rig" viewBox="0 0 200 220" id="handRig">
+            <!-- connections -->
+            <g class="bones" stroke="currentColor" stroke-width="1.4" fill="none" opacity="0.55">
+              <path d="M100,190 L100,150 M100,150 L70,120 M70,120 L60,90 M60,90 L52,66 M100,150 L85,105 M85,105 L80,72 M80,72 L77,48 M100,150 L102,98 M102,98 L103,62 M103,62 L104,36 M100,150 L118,102 M118,102 L122,68 M122,68 L125,44 M100,150 L132,118 M132,118 L140,92 M140,92 L146,72"/>
+            </g>
+            <g class="joints" fill="currentColor">
+              <circle cx="100" cy="190" r="4"/>
+              <circle cx="100" cy="150" r="4.5"/>
+              <circle cx="70" cy="120" r="3"/>
+              <circle cx="60" cy="90" r="3"/>
+              <circle cx="52" cy="66" r="3.4" class="tip"/>
+              <circle cx="85" cy="105" r="3"/>
+              <circle cx="80" cy="72" r="3"/>
+              <circle cx="77" cy="48" r="3.4" class="tip"/>
+              <circle cx="102" cy="98" r="3"/>
+              <circle cx="103" cy="62" r="3"/>
+              <circle cx="104" cy="36" r="3.4" class="tip"/>
+              <circle cx="118" cy="102" r="3"/>
+              <circle cx="122" cy="68" r="3"/>
+              <circle cx="125" cy="44" r="3.4" class="tip"/>
+              <circle cx="132" cy="118" r="3"/>
+              <circle cx="140" cy="92" r="3"/>
+              <circle cx="146" cy="72" r="3.4" class="tip"/>
+            </g>
+          </svg>
+
+          <div class="readout">
+            <span>GESTURE: <b id="gestureLabel">FORWARD</b></span>
+            <span>FPS: 30</span>
+            <span>LANDMARKS: 21/21</span>
+          </div>
+        </div>
+        <div class="viewport-bar bottom">
+          <span class="viewport-label">CMD → ESP32 :: WiFi :: L298N</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue"><span>Scroll</span><span class="scroll-line"></span></a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <p class="section-eyebrow">[ 01 ] // ABOUT</p>
+    <h2 class="section-title">From frame capture<br>to physical motion.</h2>
+    <div class="about-grid">
+      <p class="about-text">
+        I'm an Electronics &amp; Communication Engineering student at Purwanchal University, currently
+        in my 6th semester, with a hands-on focus on robotics, embedded systems, and real-time computer
+        vision. I like systems where software decisions immediately become physical ones — a finger
+        count becomes a motor command, a detected object becomes an alert.
+      </p>
+      <p class="about-text">
+        Most recently, I completed a robotics internship at Uttan Robotics, working on hardware–software
+        integration and microcontroller-based control. Outside of engineering, I've served as Treasurer
+        for EXCESS, managing budgeting and fund allocation for community programs.
+      </p>
+    </div>
+
+    <div class="about-stats">
+      <div class="stat">
+        <span class="stat-num">21</span>
+        <span class="stat-label">hand landmarks tracked per frame</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">30</span>
+        <span class="stat-label">FPS real-time pipeline target</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">4+</span>
+        <span class="stat-label">robotics &amp; CV projects shipped</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">2mo</span>
+        <span class="stat-label">embedded systems internship</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section section-alt" id="skills">
+  <div class="section-inner">
+    <p class="section-eyebrow">[ 02 ] // STACK</p>
+    <h2 class="section-title">Tools of the trade.</h2>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">nandini@cv-engineer:~$</span>
+      </div>
+      <div class="terminal-body">
+        <p class="terminal-line"><span class="prompt">$</span> cat skills.json</p>
+        <div class="skill-cols">
+          <div class="skill-col">
+            <p class="skill-col-title">// vision</p>
+            <ul>
+              <li>Python</li>
+              <li>OpenCV</li>
+              <li>MediaPipe</li>
+              <li>YOLO / Object Detection</li>
+              <li>Computer Vision</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <p class="skill-col-title">// hardware</p>
+            <ul>
+              <li>ESP32</li>
+              <li>L298N Motor Driver</li>
+              <li>Embedded Systems</li>
+              <li>Robotics &amp; Sensors</li>
+              <li>Hardware-Software Integration</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <p class="skill-col-title">// other</p>
+            <ul>
+              <li>Flutter</li>
+              <li>Wireless Control (Wi-Fi)</li>
+              <li>Sensor-based Pathfinding</li>
+              <li>Budgeting &amp; Fund Allocation</li>
+            </ul>
+          </div>
+        </div>
+        <p class="terminal-line blink"><span class="prompt">$</span> <span class="cursor">_</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="experience">
+  <div class="section-inner">
+    <p class="section-eyebrow">[ 03 ] // EXPERIENCE &amp; EDUCATION</p>
+    <h2 class="section-title">Where the hours went.</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <p class="timeline-date">Mar 2026 — May 2026</p>
+          <h3>Robotics Intern</h3>
+          <p class="timeline-org">Uttan Robotics, Nepal</p>
+          <p class="timeline-desc">
+            Two-month internship focused on robotics and embedded systems — hands-on work in
+            hardware-software integration and microcontroller-based control. Internship completion
+            certified by Uttan Robotics.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <p class="timeline-date">May 2025 — Feb 2026</p>
+          <h3>Treasurer</h3>
+          <p class="timeline-org">EXCESS</p>
+          <p class="timeline-desc">
+            Managed financial planning, budgeting, and fund allocation for EXCESS programs and events.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <p class="timeline-date">Currently — 6th Semester</p>
+          <h3>B.E. Electronics &amp; Communication Engineering</h3>
+          <p class="timeline-org">Purwanchal University, Dharan, Nepal</p>
+          <p class="timeline-desc">
+            Coursework and independent projects centered on embedded systems, robotics, and applied
+            computer vision.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cert-row">
+      <div class="cert-card">
+        <span class="cert-icon">◆</span>
+        <div>
+          <p class="cert-title">CS50x — Introduction to Computer Science</p>
+          <p class="cert-org">Harvard University (edX)</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <span class="cert-icon">◆</span>
+        <div>
+          <p class="cert-title">Robotics Internship Certification</p>
+          <p class="cert-org">Uttan Robotics</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section section-alt" id="projects">
+  <div class="section-inner">
+    <p class="section-eyebrow">[ 04 ] // PROJECTS</p>
+    <h2 class="section-title">Detected objects.</h2>
+    <p class="section-sub">Each card below is a logged detection — project, status, and stack.</p>
+
+    <div class="project-grid">
+
+      <article class="project-card featured">
+        <div class="project-tag-row">
+          <span class="project-status status-live">● ACTIVE</span>
+          <span class="project-conf">PERSONAL PROJECT</span>
+        </div>
+        <h3>Women Safety Device &amp; Journey Monitoring System</h3>
+        <p>
+          A wearable safety device that monitors a user's journey in real time, providing live
+          location tracking paired with an alert mechanism to help ensure safety while travelling.
+        </p>
+        <div class="project-stack">
+          <span>IoT</span><span>Real-time Tracking</span><span>Alert Systems</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-tag-row">
+          <span class="project-status status-done">● COMPLETE</span>
+          <span class="project-conf">CONF: 0.98</span>
+        </div>
+        <h3>Gesture-Controlled Robot</h3>
+        <p>
+          Real-time hand-gesture controlled robot: a webcam feed is processed with OpenCV while
+          MediaPipe detects 21 landmark points on the hand every frame. Raised-finger count classifies
+          the gesture — one for forward, two for backward, three for left, four for right, fist to stop —
+          and the command is sent wirelessly over Wi-Fi to an ESP32, which drives two motors through an
+          L298N motor driver.
+        </p>
+        <div class="project-stack">
+          <span>OpenCV</span><span>MediaPipe</span><span>ESP32</span><span>L298N</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-tag-row">
+          <span class="project-status status-done">● COMPLETE</span>
+          <span class="project-conf">CONF: 0.94</span>
+        </div>
+        <h3>Intruder Detection System</h3>
+        <p>
+          Vision-based intruder detection system using object detection techniques to identify and
+          flag unauthorized presence in a monitored area.
+        </p>
+        <div class="project-stack">
+          <span>Object Detection</span><span>Computer Vision</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-tag-row">
+          <span class="project-status status-done">● COMPLETE</span>
+          <span class="project-conf">CONF: 0.91</span>
+        </div>
+        <h3>Maze-Solving Robot</h3>
+        <p>
+          Autonomous robot capable of navigating and solving a physical maze using sensor-based
+          pathfinding logic.
+        </p>
+        <div class="project-stack">
+          <span>Robotics</span><span>Pathfinding</span><span>Sensors</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="section-inner">
+    <p class="section-eyebrow">[ 05 ] // CONTACT</p>
+    <h2 class="section-title">Let's build something<br>that moves.</h2>
+    <p class="section-sub">
+      Open to Computer Vision Engineering internships and collaborations in robotics and embedded systems.
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <a class="contact-row" href="mailto:karnnandini28@gmail.com">
+          <span class="contact-label">EMAIL</span>
+          <span class="contact-value">karnnandini28@gmail.com</span>
+        </a>
+        <a class="contact-row" href="tel:+9779702293175">
+          <span class="contact-label">PHONE</span>
+          <span class="contact-value">+977 9702293175</span>
+        </a>
+        <div class="contact-row">
+          <span class="contact-label">LOCATION</span>
+          <span class="contact-value">Dharan, Nepal</span>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <label>
+          Name
+          <input type="text" name="name" required placeholder="Your name">
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" required placeholder="Let's talk about..."></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-note">Opens your email client with the message pre-filled.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>© 2026 Nandini Karn. Built frame by frame.</p>
+  <a href="#top" class="footer-top">Back to top ↑</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
